@@ -1,6 +1,16 @@
 import { GraduationCap, Clock, Users, DollarSign, Heart, Calendar } from 'lucide-react';
+import { useState } from 'react';
+import { IscrizionePopup } from './IscrizionePopup';
 
 export function SectionAiutoStudio() {
+  const [isPopupVisible, setIsPopupVisible] = useState(false);
+  const [tipoRichiesta, setTipoRichiesta] = useState<'aiuto-studio-pagamento' | 'aiuto-studio-gratuito'>('aiuto-studio-pagamento');
+
+  const handleRichiestaClick = (tipo: 'aiuto-studio-pagamento' | 'aiuto-studio-gratuito') => {
+    setTipoRichiesta(tipo);
+    setIsPopupVisible(true);
+  };
+
   return (
     <section id="aiuto-studio" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -85,7 +95,10 @@ export function SectionAiutoStudio() {
             </div>
             
             <div className="mt-8">
-              <button className="w-full bg-[#1e3a5f] text-white px-8 py-3 rounded-lg hover:bg-[#1e3a5f]/90 transition-colors font-semibold">
+              <button 
+                onClick={() => handleRichiestaClick('aiuto-studio-pagamento')}
+                className="w-full bg-[#1e3a5f] text-white px-8 py-3 rounded-lg hover:bg-[#1e3a5f]/90 transition-colors font-semibold"
+              >
                 Richiedi Informazioni
               </button>
             </div>
@@ -164,13 +177,22 @@ export function SectionAiutoStudio() {
             </div>
             
             <div className="mt-8">
-              <button className="w-full bg-[#00a550] text-white px-8 py-3 rounded-lg hover:bg-[#00a550]/90 transition-colors font-semibold">
+              <button 
+                onClick={() => handleRichiestaClick('aiuto-studio-gratuito')}
+                className="w-full bg-[#00a550] text-white px-8 py-3 rounded-lg hover:bg-[#00a550]/90 transition-colors font-semibold"
+              >
                 Partecipa Gratuitamente
               </button>
             </div>
           </div>
         </div>
       </div>
+      
+      <IscrizionePopup 
+        isVisible={isPopupVisible}
+        onClose={() => setIsPopupVisible(false)}
+        tipo={tipoRichiesta}
+      />
     </section>
   );
 }

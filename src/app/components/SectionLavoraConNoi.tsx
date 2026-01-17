@@ -1,4 +1,4 @@
-import { Mail, Users, GraduationCap } from 'lucide-react';
+import { Mail, Users, GraduationCap, BookOpen } from 'lucide-react';
 
 export function SectionLavoraConNoi() {
   return (
@@ -9,8 +9,8 @@ export function SectionLavoraConNoi() {
           <p className="text-xl text-gray-600">Unisciti al nostro team</p>
         </div>
         
-        <div className="max-w-4xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
+        <div className="max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-8 mb-12">
             {/* Card Volontari */}
             <div className="bg-[#00a550]/5 border-2 border-[#00a550]/20 rounded-lg p-8 text-center hover:shadow-lg transition-shadow">
               <div className="flex justify-center mb-6">
@@ -36,12 +36,25 @@ export function SectionLavoraConNoi() {
                 Sei un esperto in un campo? Organizza un corso come docente sfruttando i nostri spazi attrezzati
               </p>
             </div>
+            
+            {/* Card Tutor */}
+            <div className="bg-[#c8d400]/5 border-2 border-[#c8d400]/20 rounded-lg p-8 text-center hover:shadow-lg transition-shadow">
+              <div className="flex justify-center mb-6">
+                <div className="w-16 h-16 bg-[#c8d400]/20 rounded-full flex items-center justify-center">
+                  <BookOpen className="w-8 h-8 text-[#c8d400]" />
+                </div>
+              </div>
+              <h3 className="mb-4">Diventa Tutor</h3>
+              <p className="text-gray-600">
+                Unisciti ai nostri insegnanti per fornire ripetizioni retribuite durante la settimana
+              </p>
+            </div>
           </div>
           
           {/* Testo principale e CTA */}
           <div className="bg-[#1e3a5f]/5 border-l-4 border-[#1e3a5f] rounded-lg p-8 text-center">
             <p className="text-lg text-gray-700 leading-relaxed mb-6">
-              Siamo sempre aperti a nuove collaborazioni. Se vuoi unirti ai nostri volontari per l'aiuto allo studio o se desideri organizzare un corso come docente sfruttando i nostri spazi, non esitare a contattarci via mail:
+              Siamo sempre aperti a nuove collaborazioni. Se vuoi unirti ai nostri volontari per l'aiuto allo studio, diventare tutor retribuito o se desideri organizzare un corso come docente sfruttando i nostri spazi, non esitare a contattarci via mail:
             </p>
             <a 
               href="mailto:collaborazioni@associazione.it" 

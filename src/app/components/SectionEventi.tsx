@@ -1,4 +1,6 @@
 import { Calendar, MapPin, Users, Euro } from 'lucide-react';
+import { useState } from 'react';
+import { IscrizionePopup } from './IscrizionePopup';
 
 const eventi = [
   {
@@ -28,6 +30,14 @@ const eventi = [
 ];
 
 export function SectionEventi() {
+  const [isPopupVisible, setIsPopupVisible] = useState(false);
+  const [selectedEvento, setSelectedEvento] = useState<string>('');
+
+  const handleIscrivitiClick = (eventoTitolo: string) => {
+    setSelectedEvento(eventoTitolo);
+    setIsPopupVisible(true);
+  };
+
   return (
     <section id="eventi" className="py-20 bg-[#1e3a5f]/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -65,7 +75,10 @@ export function SectionEventi() {
                 </div>
                 
                 <div className="mt-4 md:mt-0 md:ml-8">
-                  <button className="w-full md:w-auto bg-[#1e3a5f] text-white px-8 py-3 rounded-lg hover:bg-[#1e3a5f]/90 transition-colors">
+                  <button 
+                    onClick={() => handleIscrivitiClick(evento.title)}
+                    className="w-full md:w-auto bg-[#1e3a5f] text-white px-8 py-3 rounded-lg hover:bg-[#1e3a5f]/90 transition-colors"
+                  >
                     Iscriviti
                   </button>
                 </div>
@@ -74,6 +87,13 @@ export function SectionEventi() {
           ))}
         </div>
       </div>
+
+      <IscrizionePopup 
+        isVisible={isPopupVisible} 
+        onClose={() => setIsPopupVisible(false)}
+        corsoTitolo={selectedEvento}
+        tipo="evento"
+      />
     </section>
   );
 }

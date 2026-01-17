@@ -1,6 +1,16 @@
 import { Calendar, Euro, Clock, Download, Hammer, Palette, Scissors, Users } from 'lucide-react';
+import { useState } from 'react';
+import { IscrizionePopup } from './IscrizionePopup';
 
 export function SectionCorsi() {
+  const [isPopupVisible, setIsPopupVisible] = useState(false);
+  const [selectedCorso, setSelectedCorso] = useState('');
+
+  const handleIscrivitiClick = (titoloCorso: string) => {
+    setSelectedCorso(titoloCorso);
+    setIsPopupVisible(true);
+  };
+
   const corsi = [
     {
       title: "Corso di Falegnameria",
@@ -97,7 +107,10 @@ export function SectionCorsi() {
                       </div>
                       
                       <div className="mt-4 md:mt-0 md:ml-8">
-                        <button className="w-full md:w-auto bg-[#1e3a5f] text-white px-8 py-3 rounded-lg hover:bg-[#1e3a5f]/90 transition-colors">
+                        <button 
+                          onClick={() => handleIscrivitiClick(corso.title)}
+                          className="w-full md:w-auto bg-[#1e3a5f] text-white px-8 py-3 rounded-lg hover:bg-[#1e3a5f]/90 transition-colors"
+                        >
                           Iscriviti
                         </button>
                       </div>
@@ -122,6 +135,12 @@ export function SectionCorsi() {
           </p>
         </div>
       </div>
+      
+      <IscrizionePopup 
+        isVisible={isPopupVisible}
+        onClose={() => setIsPopupVisible(false)}
+        corsoTitolo={selectedCorso}
+      />
     </section>
   );
 }
