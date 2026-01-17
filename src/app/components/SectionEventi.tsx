@@ -12,12 +12,12 @@ const eventi = [
     descrizione: "Impara le tecniche base della fotografia digitale"
   },
   {
-    title: "Serata Culturale",
-    data: "22 Gennaio 2024",
-    luogo: "Teatro Comunale",
+    title: "Martedì Filosofico",
+    data: "Quasi tutti i Martedì sera - 19.00 - 23.00",
+    luogo: "Cinifabrique",
     costo: "Gratuito",
-    partecipanti: "100 posti disponibili",
-    descrizione: "Musica, poesia e arte per la comunità"
+    partecipanti: "30 posti disponibili",
+    descrizione: "Il martedì sera ci riuniamo per trovare la via della felicità. Qualche volta anche con l'aiuto di ospiti speciali."
   },
   {
     title: "Giornata Ecologica",

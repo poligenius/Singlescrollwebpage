@@ -32,7 +32,7 @@ export function SectionContatti() {
                 </div>
                 <div className="ml-4">
                   <h4 className="mb-1">Indirizzo</h4>
-                  <p className="text-gray-600">Via Roma 123, 00100 Roma</p>
+                  <p className="text-gray-600">Via S. Canzio 11, Cinisello Balsamo, 20092, (Milano).</p>
                 </div>
               </div>
               
@@ -44,7 +44,7 @@ export function SectionContatti() {
                 </div>
                 <div className="ml-4">
                   <h4 className="mb-1">Telefono</h4>
-                  <p className="text-gray-600">+39 06 1234 5678</p>
+                  <p className="text-gray-600">+02 27018576</p>
                 </div>
               </div>
               
@@ -56,7 +56,7 @@ export function SectionContatti() {
                 </div>
                 <div className="ml-4">
                   <h4 className="mb-1">Email</h4>
-                  <p className="text-gray-600">info@associazione.it</p>
+                  <p className="text-gray-600">segreteria@primacooperativa.it</p>
                 </div>
               </div>
             </div>
@@ -77,53 +77,7 @@ export function SectionContatti() {
             </div>
           </div>
           
-          {/* Form di contatto */}
-          <div className="bg-white rounded-lg shadow-lg p-8">
-            <h3 className="mb-6">Inviaci un Messaggio</h3>
-            
-            <form className="space-y-6">
-              <div>
-                <label htmlFor="nome" className="block mb-2 text-gray-700">Nome</label>
-                <input
-                  type="text"
-                  id="nome"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#1e3a5f] focus:border-transparent outline-none"
-                  placeholder="Il tuo nome"
-                />
-              </div>
-              
-              <div>
-                <label htmlFor="email" className="block mb-2 text-gray-700">Email</label>
-                <input
-                  type="email"
-                  id="email"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#1e3a5f] focus:border-transparent outline-none"
-                  placeholder="tua@email.com"
-                />
-              </div>
-              
-              <div>
-                <label htmlFor="messaggio" className="block mb-2 text-gray-700">Messaggio</label>
-                <textarea
-                  id="messaggio"
-                  rows={5}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#1e3a5f] focus:border-transparent outline-none resize-none"
-                  placeholder="Come possiamo aiutarti?"
-                ></textarea>
-              </div>
-              
-              <button
-                type="submit"
-                className="w-full bg-[#1e3a5f] text-white px-8 py-3 rounded-lg hover:bg-[#1e3a5f]/90 transition-colors"
-              >
-                Invia Messaggio
-              </button>
-            </form>
-          </div>
-        </div>
-        
-        {/* Box iscrizione newsletter */}
-        <div className="mt-16">
+          {/* Form Newsletter */}
           <div className="bg-white rounded-lg shadow-lg p-8">
             <div className="text-center mb-6">
               <div className="flex justify-center mb-4">

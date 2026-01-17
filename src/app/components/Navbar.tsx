@@ -1,14 +1,15 @@
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
+import logo from 'figma:asset/e4ad09696ee98820e009e107ae9f7a2ddd939917.png';
 
 const navItems = [
-  { name: 'Home', id: 'home' },
-  { name: 'Corsi', id: 'corsi' },
-  { name: 'Aiuto allo Studio', id: 'aiuto-studio' },
-  { name: 'Eventi', id: 'eventi' },
-  { name: 'Chi Siamo', id: 'chi-siamo' },
-  { name: 'Lavora con Noi', id: 'lavora-con-noi' },
-  { name: 'Contatti', id: 'contatti' }
+  { name: 'Home', id: 'home', color: '#1e3a5f' },
+  { name: 'Corsi', id: 'corsi', color: '#00a550' },
+  { name: 'Aiuto allo Studio', id: 'aiuto-studio', color: '#c8d400' },
+  { name: 'Eventi', id: 'eventi', color: '#f7941d' },
+  { name: 'Chi Siamo', id: 'chi-siamo', color: '#1e3a5f' },
+  { name: 'Lavora con Noi', id: 'lavora-con-noi', color: '#00a550' },
+  { name: 'Contatti', id: 'contatti', color: '#f7941d' }
 ];
 
 export function Navbar() {
@@ -27,7 +28,7 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0">
-            <span className="text-2xl text-[#1e3a5f]">Associazione</span>
+            <img src={logo} alt="Cinifabrique" className="h-12" />
           </div>
           
           {/* Desktop Menu */}
@@ -36,7 +37,17 @@ export function Navbar() {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="text-gray-700 hover:text-[#1e3a5f] transition-colors px-3 py-2"
+                className="transition-all duration-300 px-3 py-2 font-medium hover:scale-105"
+                style={{ 
+                  color: item.color,
+                  textShadow: '0 0 0 transparent'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.textShadow = `0 2px 8px ${item.color}40`;
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.textShadow = '0 0 0 transparent';
+                }}
               >
                 {item.name}
               </button>
@@ -63,7 +74,8 @@ export function Navbar() {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="block w-full text-left px-3 py-2 text-gray-700 hover:text-[#1e3a5f] hover:bg-gray-50 rounded-md"
+                className="block w-full text-left px-3 py-2 hover:bg-gray-50 rounded-md font-medium transition-colors"
+                style={{ color: item.color }}
               >
                 {item.name}
               </button>
