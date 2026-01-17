@@ -1,0 +1,14 @@
+export function Footer() {
+  return (
+    <footer className="bg-[#1e3a5f] text-white py-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center">
+          <p className="mb-2">&copy; 2024 Associazione No Profit. Tutti i diritti riservati.</p>
+          <p className="text-gray-300 text-sm">
+            Fatto con ❤️ per la comunità
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
+}
