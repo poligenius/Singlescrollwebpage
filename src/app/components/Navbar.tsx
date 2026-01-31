@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
-import logo from 'figma:asset/e4ad09696ee98820e009e107ae9f7a2ddd939917.png';
+import logo from '../../assets/cinifabrique_logo.svg';
 
 const navItems = [
   { name: 'Home', id: 'home', color: '#1e3a5f' },
@@ -30,7 +30,7 @@ export function Navbar() {
           <div className="flex-shrink-0">
             <img src={logo} alt="Cinifabrique" className="h-12" />
           </div>
-          
+
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-8">
             {navItems.map((item) => (
@@ -38,7 +38,7 @@ export function Navbar() {
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
                 className="transition-all duration-300 px-3 py-2 font-medium hover:scale-105"
-                style={{ 
+                style={{
                   color: item.color,
                   textShadow: '0 0 0 transparent'
                 }}

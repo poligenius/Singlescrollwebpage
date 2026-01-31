@@ -1,4 +1,4 @@
-import logo from 'figma:asset/e4ad09696ee98820e009e107ae9f7a2ddd939917.png';
+import logo from '../../assets/cinifabrique_logo.svg';
 
 export function Footer() {
   return (
