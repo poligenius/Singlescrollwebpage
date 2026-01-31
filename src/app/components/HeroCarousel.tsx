@@ -1,21 +1,30 @@
 import Slider from 'react-slick';
 import { ImageWithFallback } from './figma/ImageWithFallback';
+import cinifabriqueFoto from '../../assets/carousel/cinifabrique_foto.png';
+import corsoRestauroFoto from '../../assets/carousel/corso_restauro_foto.jpg';
+import politecnicoCinifabrique from '../../assets/carousel/politecnico_cinifabrique.jpg';
+import aiutoAlloStudio from '../../assets/carousel/aiuto_allo_studio_carousel.jpeg';
 
 const carouselImages = [
   {
-    url: "https://images.unsplash.com/photo-1765018028697-2baae4577cdd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxub25wcm9maXQlMjB2b2x1bnRlZXJzJTIwY29tbXVuaXR5fGVufDF8fHx8MTc2NjI0MjkyMHww&ixlib=rb-4.1.0&q=80&w=1080",
+    url: cinifabriqueFoto,
     title: "Insieme per la Comunità",
-    description: "Costruiamo un futuro migliore attraverso l'impegno e la solidarietà"
+    description: "Venite a trovarci in Via S. Canzio 11, Cinisello Balsamo, 20092, (Milano)"
   },
   {
-    url: "https://images.unsplash.com/photo-1520569495996-b5e1219cb625?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdHVkZW50cyUyMHN0dWR5aW5nJTIwdG9nZXRoZXJ8ZW58MXx8fHwxNzY2MjA1NzcwfDA&ixlib=rb-4.1.0&q=80&w=1080",
-    title: "Educazione per Tutti",
-    description: "Supportiamo gli studenti nel loro percorso di crescita"
+    url: aiutoAlloStudio,
+    title: "Aiuto allo Studio",
+    description: "Offriamo aiuto allo studio con volontari e professionisti"
   },
   {
-    url: "https://images.unsplash.com/photo-1763731374100-24ee3f91a896?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb21tdW5pdHklMjBldmVudCUyMGdhdGhlcmluZ3xlbnwxfHx8fDE3NjYxNDk4ODh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    url: corsoRestauroFoto,
+    title: "Corsi di Artigianato",
+    description: "Offriamo corsi di falegnameria, artigianato e sartoria"
+  },
+  {
+    url: politecnicoCinifabrique,
     title: "Eventi e Iniziative",
-    description: "Partecipa alle nostre attività e fai la differenza"
+    description: "Partecipa ai nostri eventi, scopri tutte le iniziative"
   }
 ];
 
@@ -29,7 +38,7 @@ export function HeroCarousel() {
     autoplay: true,
     autoplaySpeed: 4000,
     fade: true,
-    pauseOnHover: true,
+    pauseOnHover: false,
     arrows: false
   };
 
