@@ -1,4 +1,6 @@
 import { X, UserCheck } from 'lucide-react';
+import { useState } from 'react';
+import { ConfirmPopup } from './ConfirmPopup';
 
 interface IscrizionePopupProps {
   isVisible: boolean;
@@ -8,6 +10,9 @@ interface IscrizionePopupProps {
 }
 
 export function IscrizionePopup({ isVisible, onClose, corsoTitolo, tipo = 'corso' }: IscrizionePopupProps) {
+  const [showConfirm, setShowConfirm] = useState(false);
+  const [confirmMessage, setConfirmMessage] = useState('');
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
@@ -20,7 +25,12 @@ export function IscrizionePopup({ isVisible, onClose, corsoTitolo, tipo = 'corso
       message = 'Grazie per la tua iscrizione! Riceverai una mail con tutti i dettagli per completare l\'iscrizione.';
     }
     
-    alert(message);
+    setConfirmMessage(message);
+    setShowConfirm(true);
+  };
+
+  const handleConfirmClose = () => {
+    setShowConfirm(false);
     onClose();
   };
   
@@ -162,6 +172,13 @@ export function IscrizionePopup({ isVisible, onClose, corsoTitolo, tipo = 'corso
           </div>
         </div>
       </div>
+
+      <ConfirmPopup 
+        isVisible={showConfirm}
+        onClose={handleConfirmClose}
+        success={true}
+        message={confirmMessage}
+      />
     </>
   );
 }

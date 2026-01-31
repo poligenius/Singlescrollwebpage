@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react';
 import { X, Mail } from 'lucide-react';
+import { ConfirmPopup } from './ConfirmPopup';
 
 export function NewsletterPopup() {
   const [isVisible, setIsVisible] = useState(false);
+  const [showConfirm, setShowConfirm] = useState(false);
 
   useEffect(() => {
     // Controlla se l'utente ha già visto la popup
@@ -25,8 +27,11 @@ export function NewsletterPopup() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Qui andrà la logica per l'iscrizione alla newsletter
-    alert('Grazie per esserti iscritto alla nostra newsletter!');
+    setShowConfirm(true);
+  };
+
+  const handleConfirmClose = () => {
+    setShowConfirm(false);
     handleClose();
   };
 
@@ -117,6 +122,13 @@ export function NewsletterPopup() {
           </div>
         </div>
       </div>
+
+      <ConfirmPopup 
+        isVisible={showConfirm}
+        onClose={handleConfirmClose}
+        success={true}
+        message="Grazie per esserti iscritto alla nostra newsletter!"
+      />
     </>
   );
 }

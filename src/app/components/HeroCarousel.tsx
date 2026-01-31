@@ -34,10 +34,10 @@ export function HeroCarousel() {
   };
 
   return (
-    <div className="relative w-full h-screen overflow-hidden">
+    <div className="relative w-full h-[60vh] md:h-[70vh] overflow-hidden">
       <Slider {...settings}>
         {carouselImages.map((image, index) => (
-          <div key={index} className="relative h-screen">
+          <div key={index} className="relative h-[60vh] md:h-[70vh]">
             <div className="absolute inset-0">
               <ImageWithFallback
                 src={image.url}

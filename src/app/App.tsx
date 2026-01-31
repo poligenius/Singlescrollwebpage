@@ -4,6 +4,7 @@ import { SectionCorsi } from './components/SectionCorsi';
 import { SectionAiutoStudio } from './components/SectionAiutoStudio';
 import { SectionEventi } from './components/SectionEventi';
 import { SectionChiSiamo } from './components/SectionChiSiamo';
+import { SectionArtigiani } from './components/SectionArtigiani';
 import { SectionLavoraConNoi } from './components/SectionLavoraConNoi';
 import { SectionContatti } from './components/SectionContatti';
 import { Footer } from './components/Footer';
@@ -17,10 +18,11 @@ export default function App() {
         <div id="home">
           <HeroCarousel />
         </div>
+        <SectionChiSiamo />
         <SectionCorsi />
         <SectionAiutoStudio />
         <SectionEventi />
-        <SectionChiSiamo />
+        <SectionArtigiani />
         <SectionLavoraConNoi />
         <SectionContatti />
       </main>

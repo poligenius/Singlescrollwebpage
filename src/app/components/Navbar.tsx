@@ -7,7 +7,7 @@ const navItems = [
   { name: 'Corsi', id: 'corsi', color: '#00a550' },
   { name: 'Aiuto allo Studio', id: 'aiuto-studio', color: '#c8d400' },
   { name: 'Eventi', id: 'eventi', color: '#f7941d' },
-  { name: 'Chi Siamo', id: 'chi-siamo', color: '#1e3a5f' },
+  { name: 'Artigiani', id: 'artigiani', color: '#1e3a5f' },
   { name: 'Lavora con Noi', id: 'lavora-con-noi', color: '#00a550' },
   { name: 'Contatti', id: 'contatti', color: '#f7941d' }
 ];
