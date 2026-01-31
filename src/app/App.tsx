@@ -16,9 +16,9 @@ export default function App() {
       <Navbar />
       <main>
         <div id="home">
+          <SectionChiSiamo />
           <HeroCarousel />
         </div>
-        <SectionChiSiamo />
         <SectionCorsi />
         <SectionAiutoStudio />
         <SectionEventi />
